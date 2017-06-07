@@ -27,10 +27,18 @@
   },
   "homepage": "https://github.com/christian-fei/Simple-Jekyll-Search",
   "dependencies": {
-    "fuzzysearch": "^1.0.3"
+    "fuzzysearch": "^1.0.3",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-using": "^0.1.1",
+    "karma": "^1.7.0",
+    "optimist": "^0.6.1"
   },
   "devDependencies": {
-    "m.test": "0.0.54",
+    "m.test": "^0.0.56",
     "standard": "^9.0.2",
     "testling": "^1.7.1",
     "uglifyjs": "^2.4.10"
