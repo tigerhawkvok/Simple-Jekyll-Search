@@ -68,54 +68,55 @@ function setOptions (_opt) {
 }
 
 function findMatches (data, crit, strategy, opt) {
+  var entry, i, j, l, len, len1, len2, len3, m
   var matches = []
   var matchTitle = []
   var matchUrl = []
   var matchTags = []
   var dullMatches = []
-  for (var i = 0; i < data.length; i++) {
+  for (i = 0; i < data.length; i++) {
     var match = findMatchesInObject(data[i], crit, strategy, opt)
     if (match) {
-        if (strategy.matches(data[i].title, crit)) matchTitle.push(match)
-        else if (strategy.matches(data[i].tags, crit)) matchTags.push(match)
-        else if (strategy.matches(data[i].url, crit)) matchUrl.push(match)
-        else  dullMatches.push(match)
+      if (strategy.matches(data[i].title, crit)) matchTitle.push(match)
+      else if (strategy.matches(data[i].tags, crit)) matchTags.push(match)
+      else if (strategy.matches(data[i].url, crit)) matchUrl.push(match)
+      else dullMatches.push(match)
     }
   }
   // Sort based on match
   for (i = 0, len = matchTitle.length; i < len; i++) {
-    entry = matchTitle[i];
+    entry = matchTitle[i]
     if (matches.length < opt.limit) {
-      matches.push(entry);
+      matches.push(entry)
     } else {
-      break;
+      break
     }
   }
 
   for (j = 0, len1 = matchTags.length; j < len1; j++) {
-    entry = matchTags[j];
+    entry = matchTags[j]
     if (matches.length < opt.limit) {
-      matches.push(entry);
+      matches.push(entry)
     } else {
-      break;
+      break
     }
   }
 
   for (l = 0, len2 = matchUrl.length; l < len2; l++) {
-    entry = matchUrl[l];
+    entry = matchUrl[l]
     if (matches.length < opt.limit) {
-      matches.push(entry);
+      matches.push(entry)
     } else {
-      break;
+      break
     }
   }
 
   for (m = 0, len3 = dullMatches.length; m < len3; m++) {
-    entry = dullMatches[m];
+    entry = dullMatches[m]
     if (matches.length < opt.limit) {
-      matches.push(entry);
+      matches.push(entry)
     } else {
-      break;
+      break
     }
   }
   return matches

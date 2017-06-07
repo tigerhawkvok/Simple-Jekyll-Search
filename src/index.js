@@ -7,9 +7,9 @@
     resultsContainer: null,
     json: [],
     searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-    templateMiddleware: function(){},
+    templateMiddleware: function () {},
     appendtoDom: true,
-    postRender: function(){},
+    postRender: function () {},
     noResultsText: 'No results found',
     limit: 10,
     fuzzy: false,
@@ -96,16 +96,16 @@
     })
   }
 
-  function render(results) {
-    if(options.appendToDom !== false) {
-      if( results.length === 0 ){
+  function render (results) {
+    if (options.appendToDom !== false) {
+      if (results.length === 0) {
         return appendToResultsContainer(options.noResultsText)
       }
       for (var i = 0; i < results.length; i++) {
-        appendToResultsContainer( templater.compile(results[i]) )
+        appendToResultsContainer(templater.compile(results[i]))
       }
     }
-    options.postRender(results);
+    options.postRender(results)
   }
 
   function isValidQuery (query) {
